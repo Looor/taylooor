@@ -1,2 +1,2 @@
 # taylooor
-Super fancy test
+Personal website for taylooor.com written by Taylor White.
