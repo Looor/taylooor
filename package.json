@@ -6,12 +6,12 @@
   "scripts": {
     "build:dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "clean": "echo \"Error: no clean specified\" && exit 1",
-    "rebuild": "echo \"Error: no rebuild specified\" && exit 1",
+    "clean": "rimraf dist",
+    "deploy": "node ./deploy_scripts/deploy.js",
+    "build:deploy": "npm run build && npm run deploy",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:dev": "webpack-dev-server --mode development --open",
-    "watch:test": "echo \"Error: no watch:test specified\" && exit 1",
-    "watch:webpack": "echo \"Error: no watch:webpack specified\" && exit 1"
+    "watch:test": "echo \"Error: no watch:test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -19,18 +19,12 @@
   },
   "author": "Taylor White",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/taylooor/taylooor/issues"
-  },
   "homepage": "https://github.com/taylooor/taylooor#readme",
   "dependencies": {
-    "css-loader": "^0.28.11",
-    "node-sass": "^4.7.2",
+    "prop-types": "^15.6.1",
     "react-dom": "^16.2.0",
-    "react-router": "^4.2.0",
-    "react": "^16.2.0",
-    "sass-loader": "^6.0.7",
-    "style-loader": "^0.20.3"
+    "react-router-dom": "^4.2.2",
+    "react": "^16.2.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -38,14 +32,22 @@
     "babel-loader": "^7.1.4",
     "babel-preset-airbnb": "^2.4.0",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^4.18.2",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.6",
+    "node-sass": "^4.7.2",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.7",
+    "ssh-deploy-release": "^2.1.6",
+    "style-loader": "^0.20.3",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"

@@ -2,13 +2,14 @@
 /* eslint "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] */
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route } from 'react-router';
+import { BrowserRouter as Router, Route, browserHistory } from 'react-router-dom';
+
 import App from './App';
 import About from './About';
 
 render(
   (
-    <Router>
+    <Router history={browserHistory}>
       <Route path="/" component={App}>
         <Route path="about" component={About} />
       </Route>
